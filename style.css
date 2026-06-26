@@ -379,3 +379,50 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-title { font-size: 1.5em; }
   .header-inner { flex-direction: column; gap: 10px; }
 }
+
+/* ── Encart roman (promo « Le 7e initié ») ── */
+.book-card {
+  display: flex; gap: 36px; align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 32px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.book-card:hover {
+  border-color: var(--border-gold);
+  box-shadow: 0 0 30px rgba(212, 168, 75, 0.08);
+}
+.book-cover {
+  flex: 0 0 190px;
+  border-radius: 4px; overflow: hidden;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.book-cover:hover { box-shadow: 0 0 34px rgba(212, 168, 75, 0.25); transform: translateY(-3px); }
+.book-body { flex: 1; }
+.book-meta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7em; color: var(--gold-dim);
+  letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.book-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.7em; font-weight: 700;
+  color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+.book-accroche {
+  font-style: italic; font-size: 1.12em;
+  color: var(--text); margin-bottom: 14px;
+}
+.book-pitch {
+  color: var(--text-dim); font-size: 0.95em;
+  line-height: 1.7; margin-bottom: 24px;
+}
+@media (max-width: 768px) {
+  .book-card { flex-direction: column; text-align: center; padding: 28px 20px; }
+  .book-cover { flex: none; max-width: 170px; margin: 0 auto; }
+}
