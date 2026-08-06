@@ -1,0 +1,14 @@
+# Système macOS
+.DS_Store
+*.icloud
+
+# Fichiers de travail Claude (non publiés)
+.claude/
+memory/
+
+# Alias cross-domaine Dropbox (organisation locale, sans objet sur GitHub)
+*→*
+
+# Sauvegardes
+*.bak
+*.bak-*
