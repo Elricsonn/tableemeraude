@@ -1,0 +1,85 @@
+/* ── LA TABLE D'ÉMERAUDE — spécifique au site ───────────────────
+   Ne contient que ce que le kit ne couvre pas. Tout le reste vient
+   de ds/styles.css. Aucun jeton redéfini ici.
+   ─────────────────────────────────────────────────────────────── */
+
+/* Le titre du bandeau garde sa casse d'origine : « La Table
+   d'Émeraude » a toujours été en casse mixte sur ce site. Le kit
+   le met en capitales par défaut. */
+.bandeau-titre { text-transform: none; }
+
+/* En-tête d'article / de page ------------------------------------ */
+.entete-article {
+  display: flex; flex-direction: column; align-items: center;
+  gap: var(--sp-3);
+  text-align: center;
+  padding-block: var(--sp-8) var(--sp-6);
+}
+.titre-article {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: 0.14em;
+  text-indent: 0.14em;          /* compensation — voir README du kit */
+  color: var(--or);
+}
+
+/* Étiquettes ------------------------------------------------------ */
+.tags { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-2); }
+.tag {
+  font-family: var(--font-titre);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--or-moyen);
+  background: rgba(196, 154, 53, 0.1);
+  border: 1px solid rgba(196, 154, 53, 0.2);
+  border-radius: var(--r-sm);
+  padding: 2px 10px;
+}
+
+/* Image en tête d'article ---------------------------------------- */
+.image-vedette {
+  margin: 0 auto var(--sp-7);
+  max-width: 700px;
+  border: 1px solid var(--or-ombre);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+/* Barre de navigation en pied d'article -------------------------- */
+.barre-article {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--sp-5);
+  margin-top: var(--sp-7);
+  padding-top: var(--sp-6);
+  border-top: 1px solid var(--or-ombre);
+}
+
+/* Encart roman ---------------------------------------------------- */
+.livre { align-items: center; padding: var(--sp-6); }
+.livre-couverture {
+  flex: 0 0 190px;
+  border: 1px solid var(--or-fonce);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: var(--ombre-carte);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.livre-couverture:hover {
+  box-shadow: 0 0 34px rgba(212, 168, 75, 0.25);
+  transform: translateY(-3px);
+}
+.livre-titre {
+  font-family: var(--font-titre);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.1em;
+  color: var(--or);
+}
+.livre-accroche { font-style: italic; font-size: 1.12rem; }
+
+@media (max-width: 768px) {
+  .livre { flex-direction: column; text-align: center; padding: var(--sp-6) var(--sp-5); }
+  .livre-couverture { flex: none; max-width: 170px; margin-inline: auto; }
+  .livre .carte-corps { align-items: center; }
+}

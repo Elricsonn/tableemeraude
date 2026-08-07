@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>À propos — La Table d'Émeraude</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="ds/styles.css">
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="site-logo">Sic Mundus Creatus Est</a>
-      <nav class="site-nav">
+  <header class="entete">
+    <div class="entete-inner">
+      <a href="index.html" class="logo">Sic Mundus Creatus Est</a>
+      <nav class="nav">
         <a href="index.html">Accueil</a>
-        <a href="a-propos.html" class="active">À propos</a>
+        <a href="a-propos.html" aria-current="page">À propos</a>
         <a href="https://elricsonn.github.io/le-7e-initie/" target="_blank" rel="noopener">Le 7e initié</a>
-
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <div class="page-header">
-      <h1 class="page-title">À propos</h1>
-      <div class="section-separator"></div>
+  <main class="contenu">
+    <div class="entete-article">
+      <h1 class="titre-article">À propos</h1>
     </div>
+    <div class="filet filet-court"></div>
 
-    <div class="page-body">
+    <div class="prose" style="padding-bottom: var(--sp-8)">
       <p>Bienvenue à toi Visiteur.</p>
 
       <p><strong>Sic mundus creatus est</strong> est un blog que je veux rationnel, intelligent, loin de toute polémique.</p>
@@ -43,9 +45,9 @@
     </div>
   </main>
 
-  <footer class="site-footer">
-    <div class="footer-ornament">&#10022; &#10022; &#10022;</div>
-    <p class="footer-text">La Table d'Émeraude &mdash; Sic Mundus Creatus Est</p>
+  <footer class="pied">
+    <div class="ornement">&#10022; &#10022; &#10022;</div>
+    <p class="pied-texte">La Table d'Émeraude &mdash; Sic Mundus Creatus Est</p>
   </footer>
 
 </body>
