@@ -177,6 +177,21 @@
   color: var(--or);
 }
 .carte-titre a { color: inherit; }
+/* Toute la carte est cliquable : un lien existant s'étend sur le cartouche par
+   un ::after en inset: 0 — celui du TITRE sur les cartes ordinaires, celui de la
+   COUVERTURE sur la carte du roman, dont le titre n'est volontairement pas lié.
+   Les autres liens du corps (« Lire la suite », « Découvrir le roman ») repassent
+   au-dessus (z-index 2) pour rester cliquables et le texte sélectionnable.
+   ⚠️ La surcouche ne fusionne pas les liens : chaque carte conserve DEUX liens
+   vers la même cible dans l'ordre de tabulation. */
+.carte { position: relative; }
+.carte-titre a::after,
+.livre .livre-couverture::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+}
+.carte-corps a:not(.carte-titre a) { position: relative; z-index: 2; }
+.carte:has(.carte-titre a):hover,
+.livre:hover { cursor: pointer; }
 .carte-image { background-size: cover; background-position: center; min-height: 200px; }
 
 /* Variante horizontale : image à gauche, texte à droite. */
