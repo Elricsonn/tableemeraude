@@ -67,8 +67,13 @@
 }
 .livre-couverture:hover {
   box-shadow: 0 0 34px rgba(212, 168, 75, 0.25);
-  transform: translateY(-3px);
 }
+/* Le soulèvement porte sur l'IMAGE, jamais sur le lien lui-même : un transform
+   fait de l'élément le bloc conteneur de ses descendants absolus, ce qui ferait
+   retomber le ::after de la surcouche (ds/composants.css) sur la seule couverture
+   au lieu de toute la carte — la zone cliquable disparaîtrait au survol. */
+.livre-couverture img { transition: transform 0.3s; }
+.livre-couverture:hover img { transform: translateY(-3px); }
 .livre-titre {
   font-family: var(--font-titre);
   font-weight: 700;
